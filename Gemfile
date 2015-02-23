@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
+ruby "2.2.0"    #set version of ruby for rails to use in heroku
+
+#use the bootstrap gem
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
