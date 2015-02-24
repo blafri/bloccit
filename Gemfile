@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 #set version of ruby for rails to use in heroku
 ruby "2.2.0"
 
+# Add rails erd
+group :development do
+  gem "rails-erd"
+end
+
 #use the bootstrap gem
 gem 'bootstrap-sass'
 
