@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"    #set version of ruby for rails to use in heroku
+#set version of ruby for rails to use in heroku
+ruby "2.2.0"
 
 #use the bootstrap gem
 gem 'bootstrap-sass'
