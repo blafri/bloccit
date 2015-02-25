@@ -6,27 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require 'faker'
 
-# Create Posts
-50.times do
-    Post.create!(
-    title: Faker::Lorem.sentence,
-    body:  Faker::Lorem.paragraph
-  )
-end
 
-posts = Post.all
+# These two posts must be unique. If they exists in the database already they
+# Will not be duplicated
+Post.find_or_create_by(title: 'unique', body: 'unique body')
 
-#Create Comments
-100.times do
-  Comment.create!(
-    post: posts.sample,
-    body: Faker::Lorem.paragraph
-  )
-end
-
-puts "Seed finished"
-puts "#{Post.count} posts created."
-puts "#{Comment.count} comments created."
+Comment.find_or_create_by(post: Post.find_by(title: 'unique'), body: 'unique comment')
 
