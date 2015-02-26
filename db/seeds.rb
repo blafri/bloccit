@@ -10,7 +10,7 @@ require 'faker'
 
 # Create Posts
 50.times do
-    Post.create!(
+  Post.create!(
     title: Faker::Lorem.sentence,
     body:  Faker::Lorem.paragraph
   )
@@ -26,7 +26,16 @@ posts = Post.all
   )
 end
 
+# Create Advertisements
+10.times do
+  Advertisement.create!(
+    title: Faker::Lorem.sentence,
+    copy:  Faker::Lorem.paragraph,
+    price: 1 + Random.rand(1000)
+  )
+end
+
 puts "Seed finished"
 puts "#{Post.count} posts in database."
 puts "#{Comment.count} comments in database."
-
+puts "#{Advertisement.count} ads in the database"
