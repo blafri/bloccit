@@ -27,6 +27,6 @@ posts = Post.all
 end
 
 puts "Seed finished"
-puts "#{Post.count} posts created."
-puts "#{Comment.count} comments created."
+puts "#{Post.count} posts in database."
+puts "#{Comment.count} comments in database."
 
