@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby "2.2.0"
 
 #use the bootstrap gem
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 # Use devise for authentication
 gem 'devise'
@@ -67,3 +67,4 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'pundit'
