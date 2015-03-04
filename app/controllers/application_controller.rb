@@ -6,9 +6,17 @@ class ApplicationController < ActionController::Base
   # Allow name as a permited paramenter for devise
   before_action :configure_permitted_parameters, if: :devise_controller?
   
+   # Controller Filter for flash attack
+  before_action :flash_attack
+  
   protected
   
   def configure_permitted_parameters
-     devise_parameter_sanitizer.for(:sign_up) << :name
-   end
+    devise_parameter_sanitizer.for(:sign_up) << :name
+  end
+    
+  def flash_attack
+    flash[:error] = "Your flash is under attack"
+  end
+    
 end
