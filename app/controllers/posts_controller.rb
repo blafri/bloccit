@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
+    
+    @summary_path = @post.create_summary_path_for_view
   end
 
   
