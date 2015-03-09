@@ -37,7 +37,7 @@ class TopicsController < ApplicationController
     authorize @topic
     
     if @topic.update_attributes(params.require(:topic).permit(:name, :description, :public))
-      redirect_to @topic
+      redirect_to @topic, notice: "Topic was successfully updated"
     else
       flash[:error] = "Error saving topic. Please try again."
       render :edit
