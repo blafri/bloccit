@@ -67,4 +67,8 @@ group :development, :test do
   gem 'spring'
 end
 
+# Use pundit for authorization
 gem 'pundit'
+
+# use redcarpet for markdown
+gem 'redcarpet'
