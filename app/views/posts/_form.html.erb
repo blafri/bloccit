@@ -21,6 +21,13 @@
     <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
   <% end %>
 
+  <%= form_group_tag(post.errors[:image]) do %>
+    <%= image_tag(post.image.tiny.url) if post.image? %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  <% end %>
+
   <div class="form-group">
     <%= f.submit "Save", class: 'btn btn-success' %>
   </div>
