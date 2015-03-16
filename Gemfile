@@ -81,6 +81,3 @@ gem 'mini_magick'
 
 # for amazon s3
 gem 'fog'
-
-# pagination gem
-gem 'will_paginate', '~> 3.0.5'
