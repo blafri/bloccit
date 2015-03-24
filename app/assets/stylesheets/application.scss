@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 .user-info {
@@ -25,4 +27,9 @@
 
 .checkbox-indent-fix {
   margin-left: 20px;
+}
+
+.vote-arrows {
+  width: 40px;
+  text-align: center;
 }

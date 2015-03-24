@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 #set version of ruby for rails to use in heroku
 ruby "2.2.0"
 
-#use the bootstrap gem
-gem 'bootstrap-sass', '~> 3.1.1'
-
 # Use devise for authentication
 gem 'devise'
 
@@ -66,6 +63,9 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+#use the bootstrap gem
+gem 'bootstrap-sass', '~> 3.3.0'
 
 # Use pundit for authorization
 gem 'pundit'
