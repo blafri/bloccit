@@ -30,7 +30,20 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
   
+  def save_with_initial_vote
+    transaction do
+      save!
+      create_vote
+    end
+    
+    # If Transaction was unsuccessful a exception would have been thrown 
+    # so rescue it and return false so that you can display something 
+    # nice to user
+  rescue ActiveRecord::RecordInvalid
+    false
+  end
+  
   def create_vote
-    user.votes.create(value: 1, post: self)
+    user.votes.create!(value: 1, post: self)
   end
 end
