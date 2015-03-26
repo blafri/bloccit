@@ -2,7 +2,8 @@ describe Vote do
   describe "validations" do
     describe "value validation" do
       it "only allows -1 or 1 as values" do
-        expect(Vote.create(value: 5)).to eq(false)
+        vote = Vote.new(value: 5)
+        expect(vote.valid?).to eq(false)
       end
     end
   end
