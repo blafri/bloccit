@@ -33,7 +33,7 @@ users = User.all
 
 # Create Posts
 50.times do
-  post = Post.create!(
+  post = Post.new(
     user:  users.sample,
     topic: topics.sample,
     title: Faker::Lorem.sentence,
@@ -41,9 +41,8 @@ users = User.all
   )
   
   # set the created_at to a time within the past year
+  post.save_with_initial_vote
   post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
-  post.create_vote
-  post.update_rank
 end
 
 posts = Post.all
@@ -55,6 +54,21 @@ posts = Post.all
     post: posts.sample,
     body: Faker::Lorem.paragraph
   )
+end
+
+#Create Votes
+200.times do
+  val = [-1, 1].sample
+  user = users.sample
+  post = posts.sample
+  
+  if Vote.where("user_id = ? AND post_id = ?", user, post).count == 0
+    Vote.create!(
+      value: val,
+      user: user,
+      post: post
+    )
+  end
 end
 
 # Create an admin user
@@ -90,3 +104,4 @@ puts "Seed finished"
 puts "#{User.count} users in database."
 puts "#{Post.count} posts in database."
 puts "#{Comment.count} comments in database."
+puts "#{Vote.count} votes in the database."
