@@ -73,9 +73,9 @@ end
 
 # Create an admin user
 admin = User.new(
-  name:     'Admin User',
-  email:    'admin@example.com',
-  password: 'helloworld',
+  name:     'Blayne Farinha',
+  email:    'blayne.farinha@gmail.com',
+  password: 'C00lness',
   role:     'admin'
 )
 admin.skip_confirmation!
