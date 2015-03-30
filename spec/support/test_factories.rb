@@ -23,4 +23,8 @@ module TestFactories
     user
   end
   
+  def create_favorite(user, post)
+    user.favorites.create(post: post)
+  end
+  
 end
