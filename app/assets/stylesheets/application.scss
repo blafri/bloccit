@@ -41,3 +41,8 @@
 .voted {
   opacity: 0.5;
 }
+
+.link-not-active {
+  pointer-events: none;
+  cursor: default;
+}
