@@ -15,4 +15,29 @@ module ApplicationHelper
     (redcarpet.render markdown).html_safe
   end
   
+  def up_vote_link_classes(post)
+    classes = "glyphicon glyphicon-chevron-up"
+    
+    if current_user.voted(post) && current_user.voted(post).up_vote?
+      classes += user_voted_extra_classes
+    else
+      classes
+    end
+  end
+  
+  def down_vote_link_classes(post)
+    classes = "glyphicon glyphicon-chevron-down"
+    
+    if current_user.voted(post) && current_user.voted(post).down_vote?
+      classes += user_voted_extra_classes
+    else
+      classes
+    end
+  end
+  
+  private
+  
+  def user_voted_extra_classes
+    " voted link-not-active"
+  end
 end
