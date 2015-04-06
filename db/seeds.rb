@@ -100,6 +100,19 @@ member = User.new(
 member.skip_confirmation!
 member.save!
 
+# Create some recent posts
+50.times do
+  post = Post.new(
+    user:  users.sample,
+    topic: topics.sample,
+    title: Faker::Lorem.sentence,
+    body:  Faker::Lorem.paragraph
+  )
+  
+  # set the created_at to a time within the past year
+  post.save_with_initial_vote
+end
+
 puts "Seed finished"
 puts "#{User.count} users in database."
 puts "#{Post.count} posts in database."
