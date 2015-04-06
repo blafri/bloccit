@@ -24,7 +24,7 @@ describe "Visiting profiles" do
       
   end
   
-  describe "singed in" do
+  describe "signed in" do
     
     before do
       login_as(@user, :scope => :user)
