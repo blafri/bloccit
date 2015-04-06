@@ -85,6 +85,9 @@ gem 'fog'
 # pagination gem
 gem 'will_paginate', '~> 3.0.5'
 
+# new relic
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
