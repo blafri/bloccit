@@ -208,11 +208,14 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (2.11.1)
+      rack (>= 1.1, < 2.0)
     pundit (0.3.0)
       activesupport (>= 3.0.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.2.4)
     rails (4.2.0)
       actionmailer (= 4.2.0)
       actionpack (= 4.2.0)
@@ -326,7 +329,9 @@ DEPENDENCIES
   newrelic_rpm
   pg
   pry
+  puma
   pundit
+  rack-timeout
   rails (= 4.2.0)
   rails_12factor
   redcarpet
