@@ -92,4 +92,5 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara', '~> 2.4.4'
+  gem 'factory_girl_rails', '~> 4.0'
 end
