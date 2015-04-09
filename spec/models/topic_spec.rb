@@ -3,9 +3,9 @@ require 'rails_helper'
 describe Topic do
   describe "scopes" do
 
-    before do 
-      @public_topic = Topic.create # default is public
-      @private_topic = Topic.create(public: false)
+    before(:each) do 
+      @public_topic = create(:topic)
+      @private_topic = create(:private_topic)
     end
 
     describe "publicly_viewable" do
