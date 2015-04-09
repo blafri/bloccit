@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Topic do
   describe "scopes" do
 
-    before do 
+    before(:each) do 
       @public_topic = create(:topic)
       @private_topic = create(:private_topic)
     end

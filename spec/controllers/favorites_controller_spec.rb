@@ -1,10 +1,10 @@
-require 'rails_helper'
+ require 'rails_helper'
 
 describe FavoritesController do
 
   include Devise::TestHelpers
 
-  before do
+  before(:each) do
     @post = create(:post)
     @user = create(:user)
     sign_in @user

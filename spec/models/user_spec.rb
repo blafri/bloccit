@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe User do
   
-  before do
+  before(:each) do
     # Create a user and a post
     @user1 = create(:user)
     @post1 = create(:post, user: @user1)

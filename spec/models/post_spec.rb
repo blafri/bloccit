@@ -4,7 +4,7 @@ describe Post do
   
   describe 'vote methods' do
     
-    before do
+    before(:each) do
       @post = create(:post)
       
       3.times { create(:up_vote, post: @post) }

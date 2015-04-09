@@ -4,10 +4,10 @@ describe Comment do
 
   describe "after_create" do
 
-    before do
+    before(:each) do
       @post = create(:post)
       @user = create(:user)
-      @comment = build(:comment_no_stub_email, post:@post)
+      @comment = build(:comment, post:@post)
     end
  
     context "with user's permission" do
@@ -34,7 +34,7 @@ describe Comment do
     
     context "without permission" do
       
-      before { @user.update_attribute(:email_favorites, false) }
+      before(:each) { @user.update_attribute(:email_favorites, false) }
       
       it "does not send emails, even to users who have favorited" do
         create(:favorite, user: @user, post: @post)
